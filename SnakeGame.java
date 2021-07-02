@@ -1,21 +1,17 @@
-import java.awt.event.KeyEvent;
-import java.io.Console;
-import java.security.Key;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 public class SnakeGame {
 
     public static void main(String[] args) {
-        int x = 10;
-        int y = 10;
+        int gridSizeX = 10;
+        int gridSizeY = 10;
 
-        int[][] grid = InitializeGrid(x, y);
-        grid[5][9] = 1;
+        Snake snake = new Snake();
 
-        int[] vector = IndexOf(x, y, 1, grid, 2);
+        int[][] grid = InitializeGrid(gridSizeY, gridSizeX);
+        grid[5][9] = snake.body;
+
+        int[] vector = IndexOf(gridSizeY, gridSizeX, snake.body, grid, 2);
         System.out.println(Arrays.toString(vector));
     }
 
