@@ -1,3 +1,3 @@
 public class Snake {
-    public int body = 1;
+    int body = 1;
 }
